@@ -1,10 +1,8 @@
-// ==================== DATA & CONFIGURATION ====================
-
 // Hero Slider Images
 const heroSlides = [
     {
         image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1920&h=600&fit=crop',
-        title: 'Welcome to PixelCinema',
+        title: 'Welcome to CineBook',
         description: 'Book your favorite movies with just a few clicks'
     },
     {
@@ -19,87 +17,79 @@ const heroSlides = [
     }
 ];
 
-// Mock movies database with LKR prices
+// Mock movies database with LKR prices and local poster images
 const moviesDatabase = [
     {
         id: 1,
-        title: "Avengers: Endgame",
+        title: "Avatar: Fire and Ash",
         genre: "Action/Sci-Fi",
-        duration: "181 min",
+        duration: "197 min",
         price: 1200,
-        poster: "🦸",
-        image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400",
+        poster: "assets/Avatar_Fire_and_Ash_poster.jpeg", 
         showtimes: ["10:00 AM", "2:00 PM", "6:00 PM", "9:30 PM"]
     },
     {
         id: 2,
-        title: "Barbie",
-        genre: "Comedy/Fantasy",
+        title: "Black Phone 2",
+        genre: "Supernatural Horror",
         duration: "114 min",
         price: 1000,
-        poster: "💖",
-        image: "https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=400",
+        poster: "assets/Black_Phone_2_poster.jpg", 
         showtimes: ["11:00 AM", "3:00 PM", "7:00 PM", "10:00 PM"]
     },
     {
         id: 3,
-        title: "Oppenheimer",
-        genre: "Biography/Drama",
-        duration: "180 min",
+        title: "F1: The Movie",
+        genre: "sports drama",
+        duration: "155 min",
         price: 1300,
-        poster: "💣",
-        image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400",
+        poster: "assets/F1_(2025_film).png", 
         showtimes: ["10:30 AM", "2:30 PM", "6:30 PM", "9:00 PM"]
     },
     {
         id: 4,
-        title: "The Batman",
-        genre: "Action/Crime",
-        duration: "176 min",
+        title: "Love Aaj Kal (2020)",
+        genre: "Romantic Drama",
+        duration: "141 min",
         price: 1200,
-        poster: "🦇",
-        image: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=400",
+        poster: "assets/Love_Aaj_Kal_film_poster.jpg", 
         showtimes: ["11:30 AM", "3:30 PM", "7:30 PM", "10:30 PM"]
     },
     {
         id: 5,
-        title: "Dune: Part Two",
-        genre: "Sci-Fi/Adventure",
-        duration: "166 min",
+        title: "Neera: The Movie",
+        genre: "Drama",
+        duration: "130 min",
         price: 1400,
-        poster: "🏜️",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400",
+        poster: "assets/Neera_film_poster.jpg", 
         showtimes: ["10:00 AM", "1:30 PM", "5:00 PM", "8:30 PM"]
     },
     {
         id: 6,
-        title: "Interstellar",
-        genre: "Sci-Fi/Drama",
-        duration: "169 min",
+        title: "Sisu",
+        genre: "Action/Adventure",
+        duration: "102 min",
         price: 1100,
-        poster: "🚀",
-        image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400",
+        poster: "assets/Sisu_ver2.png", 
         showtimes: ["9:00 AM", "1:00 PM", "5:30 PM", "9:00 PM"]
     },
     {
-        id: 6,
-        title: "Interstellar",
-        genre: "Sci-Fi/Drama",
-        duration: "169 min",
-        price: 1100,
-        poster: "🚀",
-        image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400",
-        showtimes: ["9:00 AM", "1:00 PM", "5:30 PM", "9:00 PM"]
+        id: 7,
+        title: "Zootopia 2",
+        genre: "Animation/Adventure",
+        duration: "104 min",
+        price: 1150,
+        poster: "assets/Zootopia_2_(2025_film).jpg", 
+        showtimes: ["10:30 AM", "2:00 PM", "6:00 PM", "9:30 PM"]
     },
     {
-        id: 6,
-        title: "Interstellar",
-        genre: "Sci-Fi/Drama",
-        duration: "169 min",
-        price: 1100,
-        poster: "🚀",
-        image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400",
-        showtimes: ["9:00 AM", "1:00 PM", "5:30 PM", "9:00 PM"]
+        id: 8,
+        title: "The Conjuring – Last Rites",
+        genre: "Horror",
+        duration: "112 min",
+        price: 1250,
+        poster: "assets/The_Conjuring_–_Last_Rites.jpg", 
+        showtimes: ["11:00 AM", "2:30 PM", "6:30 PM", "10:00 PM"]
     }
 ];
 
@@ -327,7 +317,8 @@ function renderMovies(container = document.getElementById('movieGrid')) {
         movieCard.className = 'movie-card';
         movieCard.innerHTML = `
             <div class="movie-poster">
-                ${movie.poster}
+                <img src="${movie.poster}" alt="${movie.title}" 
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22%3E%3Crect width=%22400%22 height=%22600%22 fill=%22%231a1a2e%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23e94560%22%3E${movie.title}%3C/text%3E%3C/svg%3E';">
             </div>
             <div class="movie-details">
                 <h3 class="movie-title">${movie.title}</h3>
