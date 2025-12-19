@@ -4,7 +4,7 @@
 const heroSlides = [
     {
         image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1920&h=600&fit=crop',
-        title: 'Welcome to CineBook',
+        title: 'Welcome to PixelCinema',
         description: 'Book your favorite movies with just a few clicks'
     },
     {
