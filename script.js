@@ -80,6 +80,26 @@ const moviesDatabase = [
         poster: "🚀",
         image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400",
         showtimes: ["9:00 AM", "1:00 PM", "5:30 PM", "9:00 PM"]
+    },
+    {
+        id: 6,
+        title: "Interstellar",
+        genre: "Sci-Fi/Drama",
+        duration: "169 min",
+        price: 1100,
+        poster: "🚀",
+        image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400",
+        showtimes: ["9:00 AM", "1:00 PM", "5:30 PM", "9:00 PM"]
+    },
+    {
+        id: 6,
+        title: "Interstellar",
+        genre: "Sci-Fi/Drama",
+        duration: "169 min",
+        price: 1100,
+        poster: "🚀",
+        image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400",
+        showtimes: ["9:00 AM", "1:00 PM", "5:30 PM", "9:00 PM"]
     }
 ];
 
