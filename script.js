@@ -2,7 +2,7 @@
 const heroSlides = [
     {
         image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1920&h=600&fit=crop',
-        title: 'Welcome to CineBook',
+        title: 'Welcome to PIXELCINEMA',
         description: 'Book your favorite movies with just a few clicks'
     },
     {
@@ -685,6 +685,6 @@ document.addEventListener('DOMContentLoaded', function() {
         field.addEventListener('blur', handleFormInput);
     });
     
-    console.log('🎬 CineBook Enhanced System Initialized!');
+    console.log('🎬 PIXELCINEMA Enhanced System Initialized!');
     console.log('✅ Features: Glass Navigation, Hero Slider, AJAX Seat Loading, QR Codes, LKR Currency');
 });
